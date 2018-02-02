@@ -83,3 +83,18 @@ integers
 floats
 
 If you wanted to add more decimal points then type it like: "%.10f"
+
+'Y'
+single quotes is used when you have single characters
+
+"Answer: "
+double quotes is used when you have multiple characters
+
+Functions in C doesn't HOIST! :O
+
+Integers are 32bit and can only store upto 4 billion
+Anything over will reset to 0 "overflow"
+
+This has to do with (RAM) memory being finite.
+
+You can also "underflow". So 1 minus 2 (8bits) would make it 255.
