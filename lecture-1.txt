@@ -5,14 +5,12 @@ Lecture 1 - From Scratch to C
 JS
 console.log("hello, world");
 
-When flag clicked in Scratch:
-#include <stdio.h>
+When green flag clicked in Scratch:
 
 int main(void)
-{
-  printf("hello, world\n");
-}
 
+
+VOCAB:
 stdio = standard input output
 include = hey computer please include... etc
 
@@ -65,7 +63,7 @@ clang -o hello hello.c
 In the IDE the green color font with the * next to it means its an
 executable file.
 
-Some C functions:
+Some C functions provided in the <cs50.h> library:
 get_char
 get_double
 get_float
@@ -76,4 +74,10 @@ get_string
 printf("hello, %s\n", s);
 %s means "put some string here"
 
+<cs50.h> is a header file. It's a summary of the functionality of what
+you have access.
 
+DATATYPES reviewed:
+strings
+integers
+floats
