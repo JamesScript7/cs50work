@@ -81,3 +81,5 @@ DATATYPES reviewed:
 strings
 integers
 floats
+
+If you wanted to add more decimal points then type it like: "%.10f"
