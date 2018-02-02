@@ -1,0 +1,70 @@
+1/20/18
+David Malan from Harvard U.
+
+Introduction to CS:
+
+Simply problem solving. 
+
+input => [ algorithm ] => output
+
+Binary:
+
+multiply by the power of 2
+4 2 1
+x x x
+0 0 1 = 1
+
+4 2 1
+x x x
+1 1 1 = 7
+
+ASCII:
+
+A  B  C
+65 66 67 ...
+
+ASCII has been succeeded by unicode
+
+1 byte = 8 bits!
+3 bytes = 24 bits!
+
+
+Algorithm: Step by step instructions to solving a problem.
+
+
+Phone book problem:
+
+Efficiency of an algorithm:
+
+n - Linear. Checking each page and if a new page is added then
+it needs to spend extra time going through it.
+
+n/2 - Linear but twice as fast. Checking every 2 pages.
+
+log(n) - Logarithmic. Slow increase in time. Split the problem in half.
+
+								n  n/2
+							| |	 |
+time to solve | |	|     ____ log(n)
+							| |/__----
+							|/______________
+							size of problem
+
+0 pick up phone book
+1 open to middle of phone book
+2 look at names
+3 if Smith is among names
+4		call Mike
+5 else if Smith if earlier in book
+6		open to middle of left half of book
+7		go back to step 2
+8 else if Smith is later in book
+9		open to middle of right half of book
+10	go back to step 2
+11 else 
+12	quit
+
+
+SCRATCH:
+
+Multithreaded: running 2 functions at once.

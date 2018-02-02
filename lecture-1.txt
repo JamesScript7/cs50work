@@ -1,0 +1,79 @@
+2/2/2018
+
+Lecture 1 - From Scratch to C
+
+JS
+console.log("hello, world");
+
+When flag clicked in Scratch:
+#include <stdio.h>
+
+int main(void)
+{
+  printf("hello, world\n");
+}
+
+stdio = standard input output
+include = hey computer please include... etc
+
+
+The forever loop in Scratch:
+while (true)
+{
+  printf("hello, world\n");
+}
+
+
+The repeat loop in Scratch:
+for (int i = 0; i < 50: i++)
+{
+  printf("hello, world\n");
+}
+
+
+The if else in Scratch:
+if (x < y)
+{
+  printf("x is less than y\n");
+}
+else if (x > y)
+{
+  printf("x is greater than y\n");
+}
+else
+{
+  printf("x is equal to y\n");
+}
+
+
+We are writing source code and that needs to be converted to machine code
+through compilers.
+
+source code -> compiler -> machine code
+
+We will use cs50's IDE for C programming.
+IDE = integrated development environment
+
+hello.c
+(General convention: always underscore and no spaces.)
+
+clang hello.c will compile a file: a.out
+
+If you wanted to name the file:
+clang -o hello hello.c
+
+In the IDE the green color font with the * next to it means its an
+executable file.
+
+Some C functions:
+get_char
+get_double
+get_float
+get_int
+get_long_long
+get_string
+
+printf("hello, %s\n", s);
+%s means "put some string here"
+
+
