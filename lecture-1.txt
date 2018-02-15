@@ -120,3 +120,18 @@ for (int i = 0; i < 50; i++)
 {
 	// something
 }
+
+Greedy Algorithm: "Always takes the best immediate,
+or local, solution while finding an answer."
+For cashiers, it minimizes number of coins due.
+
+Luhn's Algorithm: Way to determine if a credit card number
+is syntactically vaild.
+
+0. Multiply every other digit by 2, starting with the number's
+second-to-last digit, and then add those product's digits together.
+
+1. Add the sum to the sum of the digits that weren't multiplied by 2.
+
+2. If the total's last digit is 0 (or, put more formally, if the total
+modulo is congruent to 0), the number is valid.
