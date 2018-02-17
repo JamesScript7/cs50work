@@ -1,3 +1,4 @@
+#include <math.h>
 #include <cs50.h>
 #include <stdio.h>
 
@@ -7,11 +8,11 @@ int main(void)
 	float num = get_float("Enter your change: ");
 
 	// Initialize change counter:
-	int change = num * 100;
-	int quarter = 0.25 * 100;
-	int dime = 0.10 * 100;
-	int nickel = 0.05 * 100;
-	int penny = 0.01 * 100;
+	int change = round(num * 100);
+	int quarter = 25;
+	int dime = 10;
+	int nickel = 5;
+	int penny = 1;
 	int total = 0;
 
 	while (change > 0)

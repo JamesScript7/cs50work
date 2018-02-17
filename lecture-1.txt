@@ -126,7 +126,7 @@ or local, solution while finding an answer."
 For cashiers, it minimizes number of coins due.
 
 Luhn's Algorithm: Way to determine if a credit card number
-is syntactically vaild.
+is syntactically valid.
 
 0. Multiply every other digit by 2, starting with the number's
 second-to-last digit, and then add those product's digits together.

@@ -14,23 +14,25 @@ int main(void)
 	// Height Iterator:
 	for (int i = 0; i < num; i++)
 	{
-		// Print spaces:
+		// Print left spaces:
 		for (int j = num; j > (i + 1); j--)
 		{
 			printf("%c", ' ');
 		}
 
-		// Pyramid Iterator:
-		for (int k = 0; k < 2; k++)
+		// Print 1st pyramid:
+		for (int l = 0; l < (i + 1); l++)
 		{
-			//Print a pyramid:
-			for (int l = 0; l < (i + 1); l++)
-			{
-				printf("#");
-			}
+			printf("#");
+		}
 
-			// Print 2 spaces to separate pyramids:
-			printf("%s", "  ");
+		// Print 2 spaces to separate pyramids:
+		printf("%s", "  ");
+
+		// Print 2nd pyramid:
+		for (int l = 0; l < (i + 1); l++)
+		{
+			printf("#");
 		}
 
 		// New line at the end of loop:
