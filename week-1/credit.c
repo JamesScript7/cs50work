@@ -1,38 +1,95 @@
+#include <math.h>
 #include <cs50.h>
 #include <stdio.h>
 
+// To include the libraries above:
+// gcc credit.c -o credit -lcs50 -lm
+
+int cardChecker(long long cardNumber, int sum, int length);
+int lengthFinder(long long cardNumber, int length);
+
 int main(void)
 {
-	// Prompt user for cc number:
-	long long cardnum = get_long_long("Number: ");
-	string cardtype;
+	// Prompt user for cc number until valid:
+	long long cardNumber;
+	do
+	{
+		cardNumber = get_long_long("Number: ");
+	}
+	while(cardNumber <= 0);
 
-	int x = 51;
+	// Initialize variables for cardChecker():
+	int sum = 0;
+	int length = 0;
+	int card = cardChecker(cardNumber, sum, length);
 	
-	// AMEX: 15-digit && start == 34 || start == 37
-	// MASTERCARD: 16-digit && start >= 51 && start <= 55
-	// VISA: 13-digit || 16-digit && start == 4
+	string cardtype = "INVALID";
 
-	if (x == 4)
+	// If cardChecker() return an integer 1 (true):
+	if (card == 1)
 	{
-		cardtype = "VISA";
+		length = lengthFinder(cardNumber, length);
+		int start = floor(cardNumber / pow(10, length - 2));
+
+		// Specifically for VISA. It drops the ones place value:
+		if (start >= 40 && start <= 49)
+		{
+			start = floor(start / 10);
+		}
+
+		if ((start == 34 && start <= 55) && length == 16)
+		{
+			cardtype = "AMEX";
+		}
+		else if ((start >= 51 && start <= 55) && length == 16)
+		{
+			cardtype = "MASTERCARD";
+		}
+		else if ((start == 4) && (length == 13 || length == 16))
+		{
+			cardtype = "VISA";
+		}
 	}
-	else if (x >= 51 && x <= 55)
+
+	printf("%s\n", cardtype);
+	return 0;
+}
+
+// Returns 1 || 0:
+int cardChecker(long long cardNumber, int sum, int length)
+{
+	if (cardNumber <= 0)
 	{
-		cardtype = "MASTERCARD";
-	}
-	else if (x == 34 || x == 37)
-	{
-		cardtype = "AMEX";
+		return sum ? sum % 10 == 0 : false;
 	}
 	else
 	{
-		cardtype = "INVALID";
-		printf("%s\n", cardtype);
-		return 0;
-	}
+		long long numberProduct = cardNumber % 10 * 2;
 
-	printf("%lli\n", cardnum);
-	printf("%s\n", cardtype);
-	return 0;
+		// If product is even of double digits, it gets
+		// the product and adds the 2 digits together:
+		if (length % 2)
+		{
+			sum += floor(numberProduct / 10) + (numberProduct % 10);
+		}
+		else
+		{
+			sum += cardNumber % 10;
+		}
+
+		return cardChecker(floor(cardNumber / 10), sum, length + 1);
+	}
+}
+
+// Returns the card length:
+int lengthFinder(long long cardNumber, int length)
+{
+	if (cardNumber <= 0)
+	{
+		return length;
+	}
+	else
+	{
+		return lengthFinder(floor(cardNumber / 10), length + 1);
+	}
 }
