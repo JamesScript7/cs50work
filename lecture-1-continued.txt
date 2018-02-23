@@ -1,0 +1,64 @@
+2/22/18
+David Malan from Harvard University
+
+Week 1 (continued): Deeper dive in C.
+
+Always look at the first error because the other ones can be
+cascading errors from the first error.
+
+linking libraries:
+cs50.h = -lcs50
+math.h = -lm
+
+Compiler take your source code and translates it to Assembly Code.
+Then it takes Assembly code and turns it into machine code (1's and 0's)
+
+preprocessing
+compiling
+assembling
+linking
+
+eprintf("About to prompt user\n");
+error printf: Purely diagnostic. It gives you a line number as well.
+
+debugger -
+debug50 ./mario
+
+Step over button -
+You can see code step by step / line by line.
+
+string (sequence of characters)
+To print out individual characters in a string:
+in a loop...
+printf("%c", s[i]);
+strlen(s) will give you the length of a string
+
+Typecasting:
+This will change char into int
+(int) s[i]
+
+For strings:
+C puts in '\0'(null character) at the end (null termininated.)
+
+Array is something back to back in memory
+
+type name[length] = { a, b, c };
+int num[3] = { 1, 2, 3 };
+
+2 inputs
+int main(int argc, string argv[])
+argument vector
+one is int and one is array of strings
+
+string argv[] means this is an array of strings.
+
+argv[100]:
+segmentation fault: you touched a chunk of memory you shouldn't have.
+
+
+TYPE:
+double 64bit precision
+float 32bit precision
+
+One way to turn char/string into ASCII int:
+printf("%i", (int) 'string');

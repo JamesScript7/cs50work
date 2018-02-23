@@ -1,6 +1,7 @@
 2/2/2018
+David Malan from Harvard University.
 
-Lecture 1 - From Scratch to C
+Week 1: From Scratch to C.
 
 JS
 console.log("hello, world");

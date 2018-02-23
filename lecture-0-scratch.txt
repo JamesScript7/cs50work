@@ -1,7 +1,7 @@
 1/20/18
-David Malan from Harvard U.
+David Malan from Harvard University.
 
-Introduction to CS:
+Week 0: Introduction to CS.
 
 Simply problem solving. 
 
