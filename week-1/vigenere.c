@@ -12,37 +12,34 @@
 int main(int argc, string argv[])
 {
 	// if arguments are not supplied or is a number:
-	if (argc < 2 || atoi(argv[1]))
+	if (argc < 2 || argc > 2 || atoi(argv[1]))
 	{
-		return 1;
-	}
-	else if (argc > 2)
-	{
+		printf("%s\n", "Please enter an alphabetical key.");
 		return 1;
 	}
 
 	// Key is stored here:
 	string keyText = argv[1];
 
-	// Checks key for any non alpha characters:
+	// Check key for any non-alpha characters:
 	for (int l = 0; l < strlen(keyText); l++)
 	{
 		if (!isalpha(keyText[l]))
 		{
 			return 1;
 		}
-	}
+	}q
 
 	// Prompt user for plaintext:
 	string plainText = get_string("plaintext: ");
 
-	//Print enciphered text:
+	// Print enciphered text:
 	printf("ciphertext: ");
 
-	// Takes user input and converts each char to int:
+	// Take user input and convert each char to int:
 	for (int i = 0, n = strlen(plainText), j = 0; i < n; i++)
 	{
-		// Converting string to ASCII value:
+		// Convert string to ASCII value:
 		int ptASCII = plainText[i];
 		int keyASCII = keyText[(i - j) % strlen(ketText)];
 
@@ -52,7 +49,7 @@ int main(int argc, string argv[])
 
 		char cipherText;
 
-		// Normalizes the keyASCII:
+		// Normalize the keyASCII:
 		if (isupper(keyText[i % strlen(keyText)]))
 		{
 			keyASCII -= asciiPositionUpper;
@@ -62,7 +59,7 @@ int main(int argc, string argv[])
 			keyASCII -= asciiPositionLower;
 		}
 
-		// Loops through plainText and returns modified character:
+		// Loop through plainText and return modified character:
 		if (plainText[i] == ' ')
 		{
 			j++;

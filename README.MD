@@ -12,3 +12,8 @@ Scratch
 
 Week 1
 Programming in C
+
+Week 1 (continued)
+Deeper dive in C
+
+Week 2
