@@ -2,6 +2,9 @@
 #define _XOPEN_SOURCE
 #include <unistd.h>
 
+// char *crypt(const char *key, const char *salt);
+
+#include <string.h>
 #include <cs50.h>
 #include <stdio.h>
 
@@ -9,12 +12,13 @@ int main(int argc, string argv[])
 {
 	if (argc < 2 || argc > 2)
 	{
+		printf("Usage: ./crack hash\n");
 		return 1;
 	}
 
 	// The hashed Password:
 	string hashedPassword = argv[1];
-	printf("hashedPassword: %s\n", hashedPassword);
+	// printf("hashedPassword: %s\n", hashedPassword);
 
 	// Salt is a 2 character string [a-zA-Z0-9] used to
 	// perturb the algorithm in 4096 different ways.
@@ -24,8 +28,8 @@ int main(int argc, string argv[])
 	sprintf(theSalt, "%c%c", argv[1][0], argv[1][1]);
 
 	// Key is a user's typed password. We need to find the key.
-	// char theKey[6];
-	// printf("%d\n", theKey);
+	char theKey[14];
+	int result;
 
 	// LOOP
 	for (int i = 'A', j = 'a'; i <= 'Z'; i++, j++)

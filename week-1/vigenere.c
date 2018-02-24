@@ -14,7 +14,7 @@ int main(int argc, string argv[])
 	// if arguments are not supplied or is a number:
 	if (argc < 2 || argc > 2 || atoi(argv[1]))
 	{
-		printf("%s\n", "Please enter an alphabetical key.");
+		printf("Usage: ./vigenere k\n");
 		return 1;
 	}
 

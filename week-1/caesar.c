@@ -11,16 +11,12 @@ int main(int argc, string argv[])
 	// Both include ./<program> as the first argument.
 
 	// Argument checker:
-	if (argc < 2)
+	if (argc < 2 || argc > 2)
 	{
-		printf("%s\n", "Error: Please enter a non-negative integer.");
-		return 1;
-	} else if (argc > 2)
-	{
-		printf("%s\n", "Error: Too many arguments entered.");
+		printf("Usage: ./caesar k\n");
 		return 1;
 	}
-	
+
 	// Converts the command-line input "string" to "integer":
 	// Note: If argv[1] is not an integer it returns 0;
 	int k = atoi(argv[1]);
