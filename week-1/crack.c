@@ -283,14 +283,3 @@ int main(int argc, string argv[])
     printf("No match found.");
     return 0;
 }
-
-// anushree:50xcIMJ0y.RXo => YES
-// brian:50mjprEcqC/ts    => CA
-// bjbrown:50GApilQSG3E2  =>
-// lloyd:50n0AAUD.pL8g    =>
-// malan:50CcfIk1QrPr6    =>
-// maria:509nVI8B9VfuA    => TF
-// natmelo:50JIIyhDORqMU  => nope
-// rob:50JGnXUgaafgc      => ROFL
-// stelios:51u8F0dkeDSbY  => NO
-// zamyla:50cI2vYkF0YU2   => LOL
