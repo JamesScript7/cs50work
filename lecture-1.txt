@@ -1,5 +1,4 @@
 2/2/2018
-David Malan from Harvard University.
 
 Week 1: From Scratch to C.
 
@@ -93,7 +92,7 @@ double quotes is used when you have multiple characters
 
 Functions in C doesn't HOIST! :O
 
-Integers are 32bit and can only store upto 4 billion
+Integers are 32bit and can only store up to 4 billion
 Anything over will reset to 0 "overflow"
 
 This has to do with (RAM) memory being finite.

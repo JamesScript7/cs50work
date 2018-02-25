@@ -1,5 +1,4 @@
 2/22/18
-David Malan from Harvard University
 
 Week 1 (continued): Deeper dive in C.
 

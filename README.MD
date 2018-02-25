@@ -1,19 +1,11 @@
-# CS50 Intro to Computer Science 2018
+# Intro to Computer Science
 
-## Harvard course taught by David J. Malan
+## Programming notes
 
-My notes and problem set works.
+Languages used: C, Python, and JavaScript.
 
-Here is the link to the syllabus:
-https://cs50.harvard.edu/syllabus
+*Note: Don't use this repository to cheat through the course. Make sure to uphold the Academic Honesty standard set by Harvard University.
 
-Week 0
-Scratch
+Note: This repository is to make the history of my work for this course available to me and anyone else who's interested.
 
-Week 1
-Programming in C
-
-Week 1 (continued)
-Deeper dive in C
-
-Week 2
+All problem sets are made by me and class lectures are made by their respective owner(s).*
