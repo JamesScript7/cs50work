@@ -1,0 +1,33 @@
+2/27/18
+
+Week 2: Continuation of C.
+
+A string is an array of characters!
+
+Each character is stored in a 'locker'
+
+----------------------------------
+| s | t | e | l | i | o | s | \0 |
+----------------------------------
+
+Having things sorted is a powerful ingredient to solving the problem.
+
+so how do you get something sorted?
+
+Insertion sort:
+grab one, compare and insert where it belongs.
+
+Bubble sort: O(n^2)
+The biggest number 'bubbled up' to the end of the array.
+The next iteration will have one less integer to sort through.
+
+Selection sort:
+Another method is to search for the smallest number in arr[0] then
+continue to arr[1] and search for a number thats smaller than arr[1]
+(seems like a lot of work)
+
+Merge sort: O(n log n)
+Recursively sort the left half, right half, and merge them together.
+
+Worst case senario = Big O
+Best case senario = Big Omega
