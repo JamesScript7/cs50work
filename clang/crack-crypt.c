@@ -27,26 +27,26 @@ int main(int argc, string argv[])
     // printf("test hash: %s\n", crypt("BBB", theSalt));
 
 		// Dictionary Attack!
-		char word[128];
-		FILE *dict;
+    char word[128];
+    FILE *dict;
 
-		dict = fopen("/usr/share/dict/words", "r");
-		if (dict == NULL)
-		{
-			printf("Unable to open file.\n");
+    dict = fopen("/usr/share/dict/words", "r");
+    if (dict == NULL)
+    {
+		  printf("Unable to open file.\n");
 			return 1;
 		}
 
 		while (1)
 		{
-			if (fgets(word, 128, dict) == NULL) break;
+		    if (fgets(word, 128, dict) == NULL) break;
 
-			if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
-			{
-				printf("%s\n", word);
-				return 0;
-			}
-		}
+		    if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
+        {
+            printf("%s\n", word);
+            return 0;
+        }
+    }
 
     // Key is a user's typed password. We need to find key.
     char theKey[14];
