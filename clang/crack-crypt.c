@@ -33,12 +33,12 @@ int main(int argc, string argv[])
     dict = fopen("/usr/share/dict/words", "r");
     if (dict == NULL)
     {
-		  printf("Unable to open file.\n");
-			return 1;
-		}
+        printf("Unable to open file.\n");
+        return 1;
+    }
 
-		while (1)
-		{
+    while (1)
+    {
 		    if (fgets(word, 128, dict) == NULL) break;
 
 		    if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
