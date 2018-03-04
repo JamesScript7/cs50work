@@ -39,9 +39,9 @@ int main(int argc, string argv[])
 
     while (1)
     {
-		    if (fgets(word, 128, dict) == NULL) break;
+        if (fgets(word, 128, dict) == NULL) break;
 
-		    if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
+        if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
         {
             printf("%s\n", word);
             return 0;
