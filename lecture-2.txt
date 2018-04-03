@@ -12,22 +12,36 @@ Each character is stored in a 'locker'
 
 Having things sorted is a powerful ingredient to solving the problem.
 
-so how do you get something sorted?
+========================================
+==    Worst case senario:  Big O      ==
+==   Best case senario:  Big Omega    ==
+========================================
 
-Insertion sort:
+So how do you get something sorted?
+
+Insertion sort: O(n^2) / Omega(n)
 grab one, compare and insert where it belongs.
 
-Bubble sort: O(n^2)
+Bubble sort: O(n^2) / Omega(n)
 The biggest number 'bubbled up' to the end of the array.
 The next iteration will have one less integer to sort through.
 
-Selection sort:
+Selection sort: O(n^2) / Omega(n^2)
 Another method is to search for the smallest number in arr[0] then
 continue to arr[1] and search for a number thats smaller than arr[1]
 (seems like a lot of work)
 
-Merge sort: O(n log n)
+Merge sort: O(n log n) / Omega(n log n)
 Recursively sort the left half, right half, and merge them together.
 
-Worst case senario = Big O
-Best case senario = Big Omega
+Linear search: O(n) / Omega(1)
+Iterate across the array from left ot right, searching for the specified
+element.
+
+Binary search: O(log n) / Omega(1)
+Divide and conquer method! Array must fit a certain condition, it must be
+sorted. Use log2() to calculate the minimum number of times it must iterate
+through.
+Basically adjust the start or end point depending on where the number might
+be. If the start point and end point cross, we can guarantee the specified
+element doesn't exist in the array.
