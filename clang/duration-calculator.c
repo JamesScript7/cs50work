@@ -34,7 +34,7 @@ int duration(string fraction)
   numerator = atoi(fraction0);
   denominator = atoi(fraction2);
 
-  // Checks if the denominator is a multiple of 2
+  // Checks if the denominator is a power of 2
   if (denominator % 2 != 0)
   {
     printf("%s\n", "Denominator is not a multiple of 2.");
