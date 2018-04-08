@@ -8,15 +8,14 @@ int frequency(string note);
 
 int main(void)
 {
-    frequency("C#4");
+    frequency("C4");
     return 0;
 }
 
 int frequency(string note)
 {
-    char noteList[13] = {
-        'C', 's', 'D', 's', 'E', 'F', 's', 'G', 's', 'A', 's','B', '\0'
-    };
+    // From key C to B with 's' as a placeholder for "Accidentals"
+    char noteList[13] = { 'C', 's', 'D', 's', 'E', 'F', 's', 'G', 's', 'A', 's','B', '\0' };
     // Grabs input char of the note as an int
     int theNote = note[0];
 
@@ -36,12 +35,15 @@ int frequency(string note)
     int semitones = 0;
     // Frequency value of the note
     float freq = 0;
-    // Frequency of C0
+    // Frequency of A0
     float octaveAtZero = 27.5;
+    // Semitone count of frequency A relative to C
+    int semitoneCountOfA4 = 10;
 
     // If input contains Sharps or Flats aka Accidentals
     if (len == 3)
     {
+        // Stores the Accidental
         char accidental[2];
         sprintf(accidental, "%c", note[1]);
 
@@ -51,7 +53,7 @@ int frequency(string note)
         sprintf(sharp, "%c", '#');
         sprintf(flat, "%c", 'b');
 
-        // Sharps will increment and Flats will decrement a semitone
+        // Sharps will increment and Flats will decrement a semitone, "int count"
         if (strcmp(accidental, sharp) == 0) count++;
         if (strcmp(accidental, flat) == 0) count--;
     }
@@ -60,10 +62,14 @@ int frequency(string note)
     {
         // Increments semitone count
         count++;
+        // Compares between the ASCII DEC value
         if (theNote == noteList[i])
         {
-            semitones = count - 10;
+            // Number of semitones relative to note A
+            semitones = count - semitoneCountOfA4;
+            // Finds out the octave frequency of note A based on which level specified
             octave = octaveAtZero * pow(2, octave);
+            // Final calculation to find out the frequency value of the note
             freq = pow(2, (float) semitones / 12) * octave;
         }
     }
