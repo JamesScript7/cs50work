@@ -25,10 +25,10 @@ int frequency(string note)
     sprintf(noteLen, "%lu", strlen(note));
     int len = atoi(noteLen);
 
-    // Convert the input octave char into float int:
+    // Convert the input octave char into int:
     char theOctave[2];
     sprintf(theOctave, "%c", note[len - 1]);
-    float octave = atoi(theOctave);
+    int octave = atoi(theOctave);
 
     // Keeps track of the semitones relative to C
     int count = 0;
