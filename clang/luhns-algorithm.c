@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // To include the libraries above:
-// gcc credit.c -o credit -lcs50 -lm
+// gcc luhns-algorithm.c -o luhns-algorithm -lcs50 -lm
 
 int cardChecker(long long cardNumber, int sum, int length);
 int lengthFinder(long long cardNumber, int length);
@@ -22,7 +22,7 @@ int main(void)
 	int sum = 0;
 	int length = 0;
 	int card = cardChecker(cardNumber, sum, length);
-	
+
 	string cardtype = "INVALID";
 
 	// If cardChecker() return an integer 1 (true):
@@ -33,22 +33,14 @@ int main(void)
 
 		// Specifically for VISA. It drops the ones place value:
 		if (start >= 40 && start <= 49)
-		{
 			start = floor(start / 10);
-		}
 
 		if ((start == 34 && start <= 55) && length == 16)
-		{
 			cardtype = "AMEX";
-		}
 		else if ((start >= 51 && start <= 55) && length == 16)
-		{
 			cardtype = "MASTERCARD";
-		}
 		else if ((start == 4) && (length == 13 || length == 16))
-		{
 			cardtype = "VISA";
-		}
 	}
 
 	printf("%s\n", cardtype);
@@ -69,13 +61,9 @@ int cardChecker(long long cardNumber, int sum, int length)
 		// If product is even of double digits, it gets
 		// the product and adds the 2 digits together:
 		if (length % 2)
-		{
 			sum += floor(numberProduct / 10) + (numberProduct % 10);
-		}
 		else
-		{
 			sum += cardNumber % 10;
-		}
 
 		return cardChecker(floor(cardNumber / 10), sum, length + 1);
 	}
@@ -85,11 +73,7 @@ int cardChecker(long long cardNumber, int sum, int length)
 int lengthFinder(long long cardNumber, int length)
 {
 	if (cardNumber <= 0)
-	{
 		return length;
-	}
 	else
-	{
 		return lengthFinder(floor(cardNumber / 10), length + 1);
-	}
 }

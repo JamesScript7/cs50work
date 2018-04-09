@@ -14,9 +14,9 @@ int main(void)
 
 int frequency(string note)
 {
-    // From key C to B with 's' as a placeholder for "Accidentals"
+    // 1. From key C to B with 's' as a placeholder for "Accidentals"
+    // 2. Grabs input char of the note as an int
     char noteList[13] = { 'C', 's', 'D', 's', 'E', 'F', 's', 'G', 's', 'A', 's','B', '\0' };
-    // Grabs input char of the note as an int
     int theNote = note[0];
 
     // Storing the length of the input as an int
@@ -29,15 +29,15 @@ int frequency(string note)
     sprintf(theOctave, "%c", note[len - 1]);
     int octave = atoi(theOctave);
 
-    // Keeps track of the semitones relative to C
+    // 1. Keeps track of the semitones relative to C
+    // 2. Converts semitones so that it's relative to A
+    // 3. Frequency value of the note
+    // 4. Frequency of A0
+    // 5. Semitone count of frequency A relative to C
     int count = 0;
-    // Converts semitones so that it's relative to A
     int semitones = 0;
-    // Frequency value of the note
     float freq = 0;
-    // Frequency of A0
     float octaveAtZero = 27.5;
-    // Semitone count of frequency A relative to C
     int semitoneCountOfA4 = 10;
 
     // If input contains Sharps or Flats aka Accidentals
@@ -60,16 +60,16 @@ int frequency(string note)
 
     for (int i = 0; i < strlen(noteList); i++)
     {
-        // Increments semitone count
+        // 1. Increments semitone count
+        // 2. Compares between the ASCII DEC value
         count++;
-        // Compares between the ASCII DEC value
         if (theNote == noteList[i])
         {
-            // Number of semitones relative to note A
+            // 1. Number of semitones relative to note A
+            // 2. Finds out the octave frequency of note A based on which level specified
+            // 3. Final calculation to find out the frequency value of the note
             semitones = count - semitoneCountOfA4;
-            // Finds out the octave frequency of note A based on which level specified
             octave = octaveAtZero * pow(2, octave);
-            // Final calculation to find out the frequency value of the note
             freq = pow(2, (float) semitones / 12) * octave;
         }
     }
