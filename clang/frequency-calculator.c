@@ -67,11 +67,13 @@ int frequency(string note)
       semitones = count - semitoneCountOfA4;
       octave = octaveFreqAtA0 * pow(2, octave);
       freq = pow(2, (float) semitones / 12) * octave;
+      freq = round((freq / 100 ) * 100);
+
+      printf("%s => %0.0fHz\n", note, freq);
+      return freq;
     }
   }
-
-  printf("%s => %0.2fHz\n", note, round((freq / 100 ) * 100));
-  return round((freq / 100) * 100);
+  return 1;
 }
 
 // frequency chart:
