@@ -39,7 +39,7 @@ int frequency(string note)
   int semitones = 0;
   int semitoneCountOfA4 = 10;
   float freq = 0;
-  float octaveAtZero = 27.5;
+  float octaveFreqAtA0 = 27.5;
 
   // If input contains Sharps or Flats aka Accidentals:
   if (len == 3)
@@ -65,13 +65,13 @@ int frequency(string note)
       // octave:    Finds out the octave frequency of note A based on which level specified.
       // freq:      Final calculation to find out the frequency value of the note.
       semitones = count - semitoneCountOfA4;
-      octave = octaveAtZero * pow(2, octave);
+      octave = octaveFreqAtA0 * pow(2, octave);
       freq = pow(2, (float) semitones / 12) * octave;
     }
   }
 
-  printf( "%s => %0.2fHz\n", note, round((freq / 100 ) * 100) );
-  return round((freq / 100 ) * 100);
+  printf("%s => %0.2fHz\n", note, round((freq / 100 ) * 100));
+  return round((freq / 100) * 100);
 }
 
 // frequency chart:
