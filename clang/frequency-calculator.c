@@ -1,6 +1,5 @@
 #include <math.h>
 #include <string.h>
-#include <ctype.h>
 #include <cs50.h>
 #include <stdio.h>
 
@@ -14,22 +13,21 @@ int main(void)
 
 int frequency(string note)
 {
-  // noteList[13]: From key C to B with 's' as a placeholder for "Accidentals"
-  // theNote:      Grabs input char of the note as an int
+  // INPUT_NOTE_PREP
+  // noteList[13]: From key C to B with 's' as a placeholder for "Accidentals."
+  // theNote:      Grabs input char of the note as an int.
+  // len:          Storing the length of the input as an int.
   char noteList[13] = { 'C', 's', 'D', 's', 'E', 'F', 's', 'G', 's', 'A', 's','B', '\0' };
   int theNote = note[0];
+  int len = strlen(note);
 
-  // Storing the length of the input as an int
-  char noteLen[2];
-  sprintf(noteLen, "%lu", strlen(note));
-  int len = atoi(noteLen);
-
-  // Convert the input octave char into int:
+  // INPUT_OCTAVE_PREP
+  // octave: Convert the input octave char into int.
   char theOctave[2];
   sprintf(theOctave, "%c", note[len - 1]);
   int octave = atoi(theOctave);
 
-  // INITIALIZERS
+  // WAVE_CALCULATION_PREP
   // count:             Keeps track of the semitones relative to C.
   // semitones:         Converts semitones so that it's relative to A.
   // semitoneCountOfA4: Semitone count of frequency A relative to C.
@@ -41,11 +39,11 @@ int frequency(string note)
   float freq = 0;
   float octaveFreqAtA0 = 27.5;
 
-  // If input contains Sharps or Flats aka Accidentals:
+  // If input contains Sharps or Flats aka Accidentals.
+  // Sharps will INCREMENT and Flats will DECREMENT a semitone to "int count".
+  // (ASCII value of # == 35 and b == 98)
   if (len == 3)
   {
-    // Sharps will INCREMENT and Flats will DECREMENT a semitone to "int count".
-    // (ASCII value of # == 35 and b == 98)
     if (note[1] == 35)
       count++;
     else if (note[1] == 98)
@@ -67,7 +65,7 @@ int frequency(string note)
       semitones = count - semitoneCountOfA4;
       octave = octaveFreqAtA0 * pow(2, octave);
       freq = pow(2, (float) semitones / 12) * octave;
-      freq = round((freq / 100 ) * 100);
+      freq = round((freq / 100) * 100);
 
       printf("%s => %0.0fHz\n", note, freq);
       return freq;
