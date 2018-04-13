@@ -1,6 +1,6 @@
 2/27/18
 
-Week 2: Continuation of C.
+Week 2-3: Continuation of C.
 
 A string is an array of characters!
 
