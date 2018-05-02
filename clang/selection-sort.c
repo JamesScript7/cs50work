@@ -6,14 +6,15 @@ int main(void)
 	// The unsorted array
 	int arr[7] = {3,1,6,4,2,5,7};
 	int len = sizeof(arr) / sizeof(arr[0]);
+	int smallest;
+	int swapped;
 
 	for (i = 0; i < len; i++)
 	{
-		int smallest = 8;
+		smallest = len + 1;
 
 		for (j = i; j < len; j++)
 		{
-			int swapped;
 			if (arr[j] < smallest)
 			{
 				smallest = arr[j];
@@ -40,3 +41,12 @@ int main(void)
 
 	return 0;
 }
+
+// Worst case senario (Big O): Iterating over each of the
+// elements of the array.
+// O(n**2)
+
+// Best case senario (Big Omega): Exactly the same because
+// it has to iterate over all the elements to know that
+// it has been sorted.
+// Omega(n**2)

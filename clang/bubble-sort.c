@@ -49,3 +49,11 @@ int main(void)
 
   return 0;
 }
+
+// Worst case senario (Big O): Array is in reverse order so
+// it has to go through each element in the array.
+// O(n**2)
+
+// Best case senario (Big Omega): Array is already sorted but
+// it has to make at least one pass to know no bubbling occured.
+// Omega(n)

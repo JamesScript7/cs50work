@@ -33,3 +33,11 @@ int main(void)
 
 	return 0;
 }
+
+// Worst case senario (Big O): Array is in reverse order so
+// it shifts each element "n" positions for the insertion.
+// O(n**2)
+
+// Best case senario (Big Omega): Array is sorted but needs
+// to iterate over each of the element at least once.
+// Omega(n)
