@@ -5,7 +5,7 @@ int main(void)
 	int i, j, k;
 	// The unsorted array
 	int arr[7] = {3,1,6,4,2,5,7};
-	int len = 7;
+	int len = sizeof(arr) / sizeof(arr[0]);
 
 	for (i = 0; i < len; i++)
 	{

@@ -5,9 +5,9 @@ int main(void)
 {
   int j, k;
   int arr[10] = {3,6,7,9,1,4,10,5,2,8};
-  int len = 10;
-  int count;
+  int len = sizeof(arr) / sizeof(arr[0]);
   bool swapped = true;
+  int count;
 
   while (swapped)
   {
