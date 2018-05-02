@@ -28,19 +28,14 @@ int main(void)
 	}
 
 	printf("Array has been selection sorted!\n");
-
 	printf("{");
 
 	for (k = 0; k < len; k++)
 	{
-		if (k == len - 1)
-		{
-			printf("%i}\n", arr[k]);
-		}
-		else
-		{
+		if (k < len - 1)
 			printf("%i, ", arr[k]);
-		}
+		else
+			printf("%i}\n", arr[k]);
 	}
 
 	return 0;
