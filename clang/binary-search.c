@@ -18,7 +18,7 @@ int main(void)
 		if (target == arr[middle])
 		{
 			found = true;
-			break;
+			/*'Cause I'm one step closer to the edge and I'm about to*/break;
 		}
 		else if (target > arr[middle])
 		{
@@ -35,7 +35,7 @@ int main(void)
 		printf("Found target: %i, in arr[%i], after %i iterations.\n", target, middle, iterations);
 	else
 		printf("Target not found after %i iterations.\n", iterations);
-		
+
 		return 0;
 }
 

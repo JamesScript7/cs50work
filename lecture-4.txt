@@ -1,3 +1,71 @@
-4/13/18
+5/3/18
 
 Week 3:
+Data stuctures.
+
+Big O
+Big Omega
+Theta (means Big 0 = Big Omega)
+
+*Reminder that 'string' is provided by <cs50.h>
+
+Memory:
+Heap
+	|
+	v
+
+
+	^
+	|
+Stack
+
+toupper is in <ctype.h>
+strlen() is in <string.h>
+
+string is actually a synonym for char *
+(implying multiple characters are involved)
+
+ex:
+string s = get_string();
+char *s = get_string();
+
+'string s' or 'char *s' will store the location of where
+the input lives.
+* is a symbol for an address/pointer/location.
+
+strcmp will return
+0 if equal
+-1 if second input is different
+1 if first input is different
+
+In C 0 means OK
+which is paradoxical to the usual 0 == false in JS.
+
+malloc((strlen(s) + 1) * sizeof(char));
+
+malloc(5)
+malloc = memory allocation. Takes in number of bytes and give you
+back the memory address of the chunk equal to the length you specified.
+
+| 0 | 1 | 2 | 3 | 4 |
+
+malloc also comes from heap (the top)
+
+so, characters have addresses, that means instead of s[i]
+you can write it like
+printf("%c\n", *(s + i));
+
+To get input from user:
+scanf("x: ", &x);
+
+scanf, like printf, stands for scan/print formatted.
+
+You can use eprintf() to print out the line number.
+
+& is not go to address but FIND the address.
+
+Example of buffer or overflow:
+char[5];
+when you try to input something longer than 5 characters and the
+\0 gets cut off, it'll overflow the 5 bytes supplied to you and
+maybe overwrite another block of bytes.

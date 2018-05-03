@@ -24,6 +24,6 @@ int collatz(int n)
 
 int main(void)
 {
-  printf("%i\n", collatz(3));
+  printf("%i\n", collatz(7));
   return 0;
 }
