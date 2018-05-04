@@ -13,8 +13,16 @@ Memory:
 Heap
 	|
 	v
-
-
+-----
+|   |
+|   |
+-----
+|   |
+|   |
+-----
+|   |
+|   |
+-----
 	^
 	|
 Stack
@@ -62,10 +70,44 @@ scanf, like printf, stands for scan/print formatted.
 
 You can use eprintf() to print out the line number.
 
-& is not go to address but FIND the address.
+& is not go to address but FIND/GET the address.
+* pointer: go to the address and put/fetch whatever to that address.
 
 Example of buffer or overflow:
 char[5];
 when you try to input something longer than 5 characters and the
 \0 gets cut off, it'll overflow the 5 bytes supplied to you and
 maybe overwrite another block of bytes.
+
+(Remember: 1 byte = 8 bits)
+
+JPEG:
+First 3 bytes of that file will be
+(8 + 8 + 8 (24bits))
+
+255 216 255 in decimal
+11111111 11011000 11111111
+
+Hexadecimal:
+0-9a-f
+
+6 groups of 4 bits are in 24 bits.
+
+255       216       255
+1111 1111 1101 1000 1111 1111
+f    f    d    8    f    f
+0xff      0xd8      0xff
+
+0x is the prefix to hexadecimal.
+Basically JPEG starts with: 0xff 0xd8 0xff
+
+Ending notes:
+BMP
+(bit mapping)
+struct
+data structure
+
+
+Video Shorts
+
+File pointers:

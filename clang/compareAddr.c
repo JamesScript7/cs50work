@@ -8,8 +8,8 @@ int copy(void);
 
 int main(void)
 {
-	// compare();
-	copy();
+	compare();
+	// copy();
 	return 0;
 }
 
@@ -21,6 +21,7 @@ int compare(void)
 
 	char *x = get_string("x: ");
 	char *y = get_string("y: ");
+  printf("%s\n", x);
 
 	// Issue: Input is the same string but "Different" is printed.
 	// Solution: Replace (x == y) to (strcmp(x, y) == 0)
