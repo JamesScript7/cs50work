@@ -8,8 +8,8 @@ int copy(void);
 
 int main(void)
 {
-	compare();
-	// copy();
+	// compare();
+	copy();
 	return 0;
 }
 
@@ -71,5 +71,6 @@ int copy(void)
 	printf("s: %s\n", s);
 	printf("t: %s\n", t);
 	
+	free(t);
 	return 0;
 }
