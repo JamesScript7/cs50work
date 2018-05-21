@@ -27,7 +27,7 @@ int main(int argc, string argv[])
     // printf("test hash: %s\n", crypt("BBB", theSalt));
 
 		// Dictionary Attack!
-    char word[128];
+    char word[60];
 
     FILE *dict = fopen("/usr/share/dict/words", "r");
     if (dict == NULL)
@@ -36,9 +36,11 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    while (1)
+    while (!feof(dict))
     {
-        if (fgets(word, 128, dict) == NULL) break;
+				// Bad way of doing it:
+				// if (fgets(word, 60, dict) == NULL) break;
+				fgets(word, 60, dict);
 
         if (strncmp(crypt(strtok(word, "\n"), theSalt), hashedPassword, 14) == 0)
         {

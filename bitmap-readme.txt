@@ -79,9 +79,17 @@ size of bytes. 1 would mean that it reads one 'char' from the file.
 10. What value does line 63 of 'copy.c' assign to 'padding' if 'bi.biWidth'
 is '3'?
 
-If bi.biWidth is 3 bytes then it will add padding to make it equal to
-a multiple of 4.
+On line 63, the value of padding will be however many bytes necessary to
+make the number of bits a multiple of 4. If small.bmp which is 3x3 pixels (9),
+it'll add 3 bytes of padding resulting in a total of 24.
 
 11. What does 'fseek' do?
 
+It's a file position indicator that enable you to perform random read and
+write operation. It skips over padding to the next RGB triple.
+
 12. What is 'SEEK_CUR'?
+
+Used as a whence argument inside fseek(). Offset provided is relative to the
+end of the file. I believe this is useful when 'biHeight' is positive because
+then it starts at the lower-left corner.
