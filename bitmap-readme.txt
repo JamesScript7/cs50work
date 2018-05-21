@@ -90,6 +90,5 @@ write operation. It skips over padding to the next RGB triple.
 
 12. What is 'SEEK_CUR'?
 
-Used as a whence argument inside fseek(). Offset provided is relative to the
-end of the file. I believe this is useful when 'biHeight' is positive because
-then it starts at the lower-left corner.
+Used as a whence argument inside fseek(). Offset provided would be relative to
+the current position of the file.
