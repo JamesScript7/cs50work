@@ -29,7 +29,7 @@ int main(int argc, string argv[])
 		// Dictionary Attack!
     char word[128];
 
-    FILE* dict = fopen("/usr/share/dict/words", "r");
+    FILE *dict = fopen("/usr/share/dict/words", "r");
     if (dict == NULL)
     {
         printf("Unable to open file.\n");
